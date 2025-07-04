@@ -8,6 +8,7 @@ def gold_section_determ(number:int=1) -> int:
     Returns:
         int: Число попыток
     """
+    
     number = np.random.randint(1, 101) # Загаданное число
     
     count = 0  # Счётчик попыток
