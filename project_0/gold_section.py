@@ -17,16 +17,14 @@ def gold_section_determ(number:int=1) -> int:
     whole = list(range(1,101))     
     
     # Организовываем цикл 
-    while len(whole) > 7:
+    while len(whole) > 4:
         count += 1
-        predict_number = whole[int(len(whole)/1.7)] # Последнее число в большей части диапазона
+        predict_number = whole[int(len(whole)/1.6)] # Последнее число в большей части диапазона
         if predict_number > number:
             whole = list(range(whole[0], predict_number)) # Новым целым становиться большая часть
-        elif predict_number < number:
-             whole = list(range(predict_number +1, whole[-1] +1 )) # Новым целым становиться меньшая часть
-        else:
-            break # выход из цикла, если число угадано
-        
+        elif predict_number <= number:
+             whole = list(range(predict_number, whole[-1] +1 )) # Новым целым становиться меньшая часть
+                
     # Организовываем цикл  for по оставшейся части диапазона
     for predict_number in whole:
         count += 1
